@@ -4,7 +4,6 @@ USE staff_db;
 
 --create tables
 
-
 CREATE TABLE departments (
     id INTEGER (10) AUTO_INCREMENT NOT NULL,
     name VARCHAR (30),
@@ -12,7 +11,7 @@ CREATE TABLE departments (
 );
 
 
-CREATE TABLE role(
+CREATE TABLE role (
     id INTEGER (10) AUTO_INCREMENT NOT NULL,
     title VARCHAR (30),
     salary DECIMAL (10),
