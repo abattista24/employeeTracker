@@ -5,30 +5,30 @@ USE staff_db;
 --create tables
 
 CREATE TABLE departments (
-    id INTEGER (10) AUTO_INCREMENT NOT NULL,
-    name VARCHAR (30),
-    PRIMARY KEY (id),
+    id INTEGER UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR (30)
 );
 
 
 CREATE TABLE role (
-    id INTEGER (10) AUTO_INCREMENT NOT NULL,
+    id INTEGER UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR (30),
     salary DECIMAL (10),
     --use department id from above
-    department_id INTEGER (10), 
-    PRIMARY KEY (id)
+    department_id INTEGER UNSIGNED, 
+    INDEX departmentIdx(department_id)
 );
 
 
 CREATE TABLE employee(
-    id INTEGER (10) AUTO_INCREMENT NOT NULL,
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     first_name VARCHAR(30) NOT NULL,
     last_name VARCHAR(30) NOT NULL,
     --use role id from above
-    role_id INTEGER (10),
-    manager_id INTEGER (10)
-    PRIMARY KEY (id)
+    role_id INTEGER UNSIGNED,
+    INDEX roleIdx (role_id)
+    manager_id INTEGER 
+
 );
 
 
